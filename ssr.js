@@ -36,7 +36,7 @@ async function ssr(url, browserWSEndpoint) {
     const renderTime = Date.now() - start;
     console.info(`prerender page in: ${renderTime}ms`);
 
-    return {html};
+    return html;
   } catch (err) {
     console.error(err);
   }
