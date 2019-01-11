@@ -15,10 +15,10 @@ app.get('/', async (req, res, next) => {
       { 
         // headless: false,
         // below args is for testing on win7, where puppeteer will bugged out in headless mode
-        args: [
-          '--proxy-server="direct://"',
-          '--proxy-bypass-list=*'
-        ]
+        // args: [
+        //   '--proxy-server="direct://"',
+        //   '--proxy-bypass-list=*'
+        // ]
       }
     );
     browserWSEndpoint = await browser.wsEndpoint();
