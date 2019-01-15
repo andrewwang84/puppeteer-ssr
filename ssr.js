@@ -24,7 +24,7 @@ async function ssr(url, browserWSEndpoint) {
 
     try {
       await page.goto(url, {waitUntil: 'networkidle0'});
-      await page.waitForSelector('main');
+      //await page.waitForSelector('main');
     } catch (err) {
       console.error(err);
       throw new Error('page.goto/waitForSelector timed out.');
@@ -34,7 +34,7 @@ async function ssr(url, browserWSEndpoint) {
     await page.close();
 
     const renderTime = Date.now() - start;
-    console.info(`prerender page in: ${renderTime}ms`);
+    console.info(`[ SSR ] prerender page in: ${renderTime}ms`);
 
     return html;
   } catch (err) {
