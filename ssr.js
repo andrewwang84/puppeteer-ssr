@@ -27,7 +27,7 @@ async function ssr(url, browserWSEndpoint) {
       //await page.waitForSelector('main');
     } catch (err) {
       console.error(err);
-      throw new Error('page.goto/waitForSelector timed out.');
+      throw new Error('page.goto timed out.');
     }
 
     const html = await page.content();
