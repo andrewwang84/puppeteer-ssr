@@ -2,6 +2,7 @@ module.exports = {
   apps : [{
     name: "ssr-yam",
     script: "/home/www/ssr.yam.com/webroot/bin/www",
+    cwd: "/home/www/ssr.yam.com/webroot/",
     exec_mode: "cluster",
     instance: 1,
     max_memory_restart: "150M",
