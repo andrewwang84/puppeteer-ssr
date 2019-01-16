@@ -5,6 +5,7 @@ const CACHE = new Map();
 async function ssr(url, browserWSEndpoint) {
   try {
     if(CACHE.has(url)) {
+      console.info(`[ SSR ][ cache ] prerender page in: ${renderTime}ms`);
       return CACHE.get(url);
     }
 
