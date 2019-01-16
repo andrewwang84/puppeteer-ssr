@@ -1,7 +1,7 @@
 module.exports = {
   apps : [{
     name: "ssr-yam",
-    script: "./bin/www",
+    script: "/home/andrew_wang/projects/puppeteer/webroot/bin/www",
     exec_mode: "cluster",
     instance: 1,
     max_memory_restart: "150M",
