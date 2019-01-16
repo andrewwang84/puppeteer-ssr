@@ -13,6 +13,7 @@
 - set up nginx's location block to make sure you only serve prerendered page for bots, [example](https://github.com/andrewwang84/puppeteer-ssr/blob/master/nginx.txt)
 - test your site with `curl -A 'Googlebot' [your_site]` or chrome extension [User-Agent Switcher for Google Chrome](https://chrome.google.com/webstore/detail/user-agent-switcher-for-g/ffhkkpnppgnfaobgihpdblnhmmbodake)
 
+
 ## Trouble Shooting
 
 - fail launching Chrome: happens on ubuntu 16.04 in my case, run the chrome_dependence.bat and the problem should be solved
