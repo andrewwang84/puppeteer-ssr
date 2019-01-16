@@ -12,6 +12,8 @@
 - open your web browser, type in `127.0.0.1:3000/?url=[sites_you_want_to_prerender]`, and you'll see the prerender result
 - set up nginx's location block to make sure you only serve prerendered page for bots, [example](https://github.com/andrewwang84/puppeteer-ssr/blob/master/nginx.txt)
 - test your site with `curl -A 'Googlebot' [your_site]` or chrome extension [User-Agent Switcher for Google Chrome](https://chrome.google.com/webstore/detail/user-agent-switcher-for-g/ffhkkpnppgnfaobgihpdblnhmmbodake)
+- set up your pm2 & logrotate, and you're good to go!
+
 
 ## Trouble Shooting
 
