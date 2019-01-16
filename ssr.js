@@ -1,7 +1,13 @@
-let puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer');
+
+const CACHE = new Map();
 
 async function ssr(url, browserWSEndpoint) {
   try {
+    if(CACHE.has(url)) {
+      return CACHE.get(url);
+    }
+
     const start = Date.now();
 
     const browser = await puppeteer.connect({ browserWSEndpoint });
@@ -35,6 +41,8 @@ async function ssr(url, browserWSEndpoint) {
 
     const renderTime = Date.now() - start;
     console.info(`[ SSR ] prerender page in: ${renderTime}ms`);
+
+    CACHE.set(url, html);
 
     return html;
   } catch (err) {
