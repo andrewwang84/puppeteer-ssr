@@ -8,7 +8,7 @@ module.exports = {
     out_file: "/home/andrew_wang/projects/puppeteer/logs/access.log",
     error_file: "/home/andrew_wang/projects/puppeteer/logs/error.log",
     log_date_format: "YYYY-MM-DD HH:mm:ss",
-    restart_delay: "10s",
+    restart_delay: 5000,
     env: {
       NODE_ENV: "development",
     },
