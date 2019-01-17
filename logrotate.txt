@@ -1,0 +1,15 @@
+/home/www/ssr.yam.com/logs/*.log
+{
+        size 150M
+        daily
+        missingok
+        dateext
+        dateformat -%Y%m%d-%s
+        rotate 3
+        compress
+        delaycompress
+        copytruncate
+        notifempty
+        create 0640 www-data adm
+        su root adm
+}
