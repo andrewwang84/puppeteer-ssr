@@ -11,7 +11,8 @@ async function ssr(url, browserWSEndpoint) {
 
     const start = Date.now();
 
-    const browser = await puppeteer.connect({ browserWSEndpoint });
+    //const browser = await puppeteer.connect({ browserWSEndpoint });
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
     // disable render of unnecessary requests and GA
@@ -38,7 +39,8 @@ async function ssr(url, browserWSEndpoint) {
     }
 
     const html = await page.content();
-    await page.close();
+    // await page.close();
+    await browser.close();
 
     const renderTime = Date.now() - start;
     console.info(`[ SSR ] prerender page in: ${renderTime}ms`);

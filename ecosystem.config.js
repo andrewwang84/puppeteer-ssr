@@ -4,7 +4,7 @@ module.exports = {
     script: "/home/www/ssr.yam.com/webroot/bin/www",
     cwd: "/home/www/ssr.yam.com/webroot/",
     exec_mode: "cluster",
-    instance: 1,
+    instance: "max",
     max_memory_restart: "1G",
     out_file: "/home/www/ssr.yam.com/logs/access.log",
     error_file: "/home/www/ssr.yam.com/logs/error.log",

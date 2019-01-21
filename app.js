@@ -10,21 +10,22 @@ let app = express();
 app.use(logger('dev'));
 
 app.get('/', async (req, res, next) => {
-  if (!browserWSEndpoint) {
-    const browser = await puppeteer.launch(
-      { 
-        // headless: false,
-        // below args is for testing on win7, where puppeteer will bugged out in headless mode
-        // args: [
-        //   '--proxy-server="direct://"',
-        //   '--proxy-bypass-list=*'
-        // ]
-      }
-    );
-    browserWSEndpoint = await browser.wsEndpoint();
-  }
+  // if (!browserWSEndpoint) {
+  //   const browser = await puppeteer.launch(
+  //     { 
+  //       // headless: false,
+  //       // below args is for testing on win7, where puppeteer will bugged out in headless mode
+  //       // args: [
+  //       //   '--proxy-server="direct://"',
+  //       //   '--proxy-bypass-list=*'
+  //       // ]
+  //     }
+  //   );
+  //   browserWSEndpoint = await browser.wsEndpoint();
+  // }
 
-  const html = await ssr(req.query.url, browserWSEndpoint);
+  // const html = await ssr(req.query.url, browserWSEndpoint);
+  const html = await ssr(req.query.url);
   return res.status(200).send(html);
 });
 
