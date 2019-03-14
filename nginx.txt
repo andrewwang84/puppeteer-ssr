@@ -1,6 +1,6 @@
 location / {
     proxy_set_header Host $host;
-    if ($http_user_agent ~ "Googlebot|Google-Structured-Data-Testing-Tool|bingbot|Slurp|baidu|duckduckgo|YandexBot|MJ12bot|SemrushBot|rogerbot|DotBot") {
+    if ($http_user_agent ~ "Googlebot|Google-Structured-Data-Testing-Tool|bingbot|Slurp|baidu|duckduckgo") {
         proxy_pass http://[private_IP]:3000/?url=https://$http_host$request_uri;
     }
     try_files $uri $uri/ /index.html$is_args$args;
